@@ -1,5 +1,4 @@
 # A simple grabber for the project gutenberg-DE texts
-# takes as input the xid of the book you want to grab.
 # Disclaimer: only tested with xid's 455 and 457, will contain
 # lots of bugs
 

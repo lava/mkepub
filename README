@@ -4,15 +4,16 @@ should be modular enough to be easily extendable, should it be needed.
 
 The program works as follows: the grabber grabs some text and stores
 it in a book object. This is book is returned, but also dumped in YAML 
-format, so you can add missing metadata by hand.
+format, so you can add missing metadata by hand. (and because the download
+can take quite long for bigger books)
 Afterwards, the epub assembler takes this book object and constructs
-an epub file from it. Again, the raw contents of the epub file are dumped,
-so you can correct errors by hand and then zip the file yourself.
+an epub file from it. Again, its possible to dump the raw contents of 
+the epub file (by calling Epub#write_to_dir) so you can add changes by hand.
 
 Also, the book to grab is currently hard-coded in mkepub.rb, which is
 ugly but currently sufficient.
 
-Note: this program requires ruby 1.9
+REQUIREMENTS: ruby 1.9, hpricot (gem), rubyzip (gem)
 
 Note: this requires the rubyzip gem, but sadly it's broken in its current
 gem1.9 version. The fix is very easy, though:
