@@ -97,15 +97,25 @@ class Epub
 		name = filename.chomp(".epub") + ".epub"
 		dir = "tmp"
 		# apparently, the Dir class can only delete empty directorys
-		system("rm -r " + dir) if File.directory? dir
+		system("rm -r " + dir) if File.exist? dir
 		Dir.mkdir(dir)
 		write_to_dir(dir)
-		puts "Collecting contents of #{dir} into file #{name}"
-		zipfile = Zip::ZipFile.open(name, Zip::ZipFile::CREATE)
+		puts "Archiving contents of #{dir}"
+
+		# epub standard requires the file 'mimetype' to be the first
+		# file in the archive (content starting at byte 38!) and 
+		# to be uncompressed
+		Zip::ZipOutputStream::open(name) { |os|
+			os.put_next_entry("mimetype", Zlib::NO_COMPRESSION)
+			os << "application/epub+zip"
+		}
+
+		#afterwards, we can begin adding the "normal" files
+		zipfile = Zip::ZipFile.open(name)
 		Dir.each_recursive(dir) do |path, filename|
 			real_path = path + filename
 			archive_path = path.sub(dir + "/", "") + filename
-			if !File.directory?(real_path)
+			if !File.directory?(real_path) && !(filename == "mimetype")
 				zipfile.add(archive_path, real_path)
 			end
 		end
@@ -119,9 +129,10 @@ class Dir
 	def self.each_recursive(path, &block)
 		Dir.foreach(path) do |fname|
 			if fname == "." || fname == ".."
-				#break
+				#ignore
 			else
 				block.call(path + "/", fname)
+
 				#recurse if possible
 				if File.directory?(path + "/" + fname)
 					each_recursive(path+"/"+fname, &block)

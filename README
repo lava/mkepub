@@ -1,11 +1,26 @@
 A tool for ripping content from project gutenberg de and converting
-it to epub format.
+it to epub format. It has been made for a very specific purpose, but
+should be modular enough to be easily extendable, should it be needed.
+
+The program works as follows: the grabber grabs some text and stores
+it in a book object. This is book is returned, but also dumped in YAML 
+format, so you can add missing metadata by hand.
+Afterwards, the epub assembler takes this book object and constructs
+an epub file from it. Again, the raw contents of the epub file are dumped,
+so you can correct errors by hand and then zip the file yourself.
+
+Also, the book to grab is currently hard-coded in mkepub.rb, which is
+ugly but currently sufficient.
+
+Note: this program requires ruby 1.9
 
 Note: this requires the rubyzip gem, but sadly it's broken in its current
 gem1.9 version. The fix is very easy, though:
-After you have installed the rubyzip gem, open the file zip/zip.rb in 
-the gem folder (use 'gem env' to find it), and comment out the line
-require 'ftools'
+Open the file zip/zip.rb in the gem folder (use 'gem env' to find it), and #
+change the following lines:
 
-I have no idea how to submit a patch at rubyforge, so you'll probably
-have to do this yourself until someone else discovers this ;)
+-require 'ftools'
++require 'fileutils'
+
+-File.move
++FileUtils.move
