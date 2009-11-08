@@ -1,0 +1,698 @@
+
+a {
+	color: #4ca721; 
+	background: transparent;
+}
+
+a:VISITED {
+	color: #4ca721; 
+	background: transparent;
+}
+
+a:HOVER {
+	color: Red; 
+	background: transparent;
+}
+
+a.SectionTitle {
+	color: Black; 
+	background: transparent;
+	text-decoration: underline;
+}
+
+a.SectionTitle:VISITED {
+	color: Black; 
+	background: transparent;
+	text-decoration: underline;
+}
+
+a.SectionTitle:HOVER {
+	color: Black; 
+	background: transparent;
+	text-decoration: underline;
+}
+
+a.SubsectionTitle {
+	color: Black; 
+	background: transparent;
+	text-decoration: none;
+}
+
+a.SubsectionTitle:VISITED {
+	color: Black; 
+	background: transparent;
+	text-decoration: none;
+}
+
+a.SubsectionTitle:HOVER {
+	color: Black; 
+	background: transparent;
+	text-decoration: none;
+}
+
+a.TOC {
+	color: #4ca721; 
+	background: transparent;
+	text-decoration: none;
+}
+
+a.TOC:VISITED {
+	color: #4ca721; 
+	background: transparent;
+	text-decoration: none;	
+}
+
+a.TOC:HOVER {
+	color: Red; 
+	background: transparent;
+	text-decoration: none;	
+}
+
+body {
+  padding-top: 2em;
+  padding-right: 1em; 
+  padding-bottom: 2em;
+  padding-left: 3em;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+div.Actors {
+	margin-bottom: 2em;
+}
+
+div.DefinitionList {
+	display: block;
+}
+
+div.Head {
+	
+}
+
+div.InlineDefinitionList {
+	display: block;
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+}
+
+div.Section {
+	padding-top: 0em;
+	padding-bottom: 0em;
+	padding-left: 0em;
+	padding-right: 0em;
+	margin-left: 1em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+div.TOC {
+	padding-top: 1.5em;
+	padding-bottom: 1em;	
+}
+
+div.TOCSection {
+	padding-top: 0em;
+	padding-bottom: 0.5em;
+}
+
+h1.SectionTitle {
+	font-size: 140%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+h1.AppendixTitle {
+	font-size: 170%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+h2.SectionTitle {
+	font-size: 140%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+h2.SubsectionTitle {
+	font-size: 120%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+h3.SubsectionTitle {
+	font-size: 120%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+h3.SubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+}
+
+h4.SubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+}
+
+h4.SubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+h5.SubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+h5.SubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h6.SubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h6.SubsubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: normal;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+h7.SubsubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: normal;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+img.Head {
+	border: 0px;
+}
+
+li {
+	margin-left: 1em;
+	margin-bottom: 0.3em;
+}
+
+ol {
+	margin-top: 0.5em;
+	padding-top: 0em;	
+}
+
+ol.BulletStyle_lower-alpha {
+	list-style-type: lower-alpha;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
+
+ol.BulletStyle_lower-roman {
+	list-style-type: lower-roman;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
+
+ol.BulletStyle_upper-alpha {
+	list-style-type: upper-alpha;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
+
+ol.BulletStyle_upper-roman {
+	list-style-type: upper-roman;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
+
+p.Actor {
+	padding: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0.2em;	
+	text-indent: 2em;	
+}
+
+p.ActorSubtitle {
+	font-size: 120%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+p.AppendixTitle {
+	font-size: 170%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+p.Copy {
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	text-indent: 1.5em;
+}
+
+p.DefinitionCopy {
+	text-indent: 1.5em;
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	margin: 0px;
+}
+
+p.DefinitionName {
+	color: #1E90FF;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+p.Copyright {
+	font-size: 60%;
+	font-weight: bold;
+}
+
+p.Logo {
+	
+}
+
+p.SectionTitle {
+	font-size: 140%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+p.SubsectionTitle {
+	font-size: 120%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+p.SubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+}
+
+p.SubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: bold;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+p.SubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+p.SubsubsubsubsubsectionTitle {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	font-weight: normal;	
+	text-decoration: none;
+	font-style: italic;
+}
+
+p.Status {
+	font-size: 140%;
+	font-family: sans-serif;
+	color: #4ca721;	
+	padding-top: 0px;
+	padding-bottom: 1em;
+	margin: 0px;
+}
+
+p.Title {
+	font-size: 170%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.3em;
+	font-weight: bold;
+}
+
+p.TOCItem {
+	font-size: 120%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0em;
+	margin-bottom: 0.1em;
+	text-indent: 2em;
+	font-weight: bold;
+}
+
+p.TOCItem2 {
+	font-size: 100%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.1em;
+	text-indent: 4em;
+	font-weight: bold;
+}
+
+p.TOCItem3 {
+	font-size: 85%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.1em;
+	text-indent: 6em;
+	font-weight: bold;
+}
+
+p.TOCItem4 {
+	font-size: 85%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.1em;
+	text-indent: 8em;
+	font-weight: bold;
+}
+
+p.TOCItem5 {
+	font-size: 75%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.1em;
+	text-indent: 12em;
+	font-weight: bold;
+}
+
+p.TOCItem6 {
+	font-size: 75%;
+	font-family: sans-serif;
+	color: #4ca721;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.1em;
+	text-indent: 14em;
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+p.TOCTitle {
+	font-size: 140%;
+	font-family: sans-serif;
+	color: Black;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.5em;
+	font-weight: bold;	
+	text-decoration: underline;
+}
+
+pre.Example {
+	font-family: monospace;
+	border: 1px solid #4ca721;
+	background-color: #DCDCDC;
+	white-space: -moz-pre-wrap;
+	padding: 0.5em;
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 90%;
+	font-size: 100%;
+}
+
+span.Attribute {
+	font-family: monospace;
+}
+
+span.AttributeValue {
+	font-family: monospace;
+	font-style: italic;
+}
+
+span.Code {
+	font-family: monospace;
+	color: Green;	
+}
+
+span.CSSProperty {
+	font-family: monospace;
+	font-weight: bold;
+	color: purple;
+}
+
+span.CSSPropertyValue {
+	font-family: monospace;
+	font-style: italic;
+	color: Purple;
+}
+
+span.Element {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+span.Emphasis {
+	font-weight: bold;
+}
+
+span.File {
+	font-family: monospace;
+	color: Green;		
+}
+
+span.FormalName {
+	font-style: italic;
+}
+
+span.MIMEType {
+	font-family: monospace;
+	font-style: italic;
+	color: Red;
+}
+
+span.Namespace {
+	font-family: monospace;
+	font-style: italic;
+	color: Blue;
+}
+
+span.Note {
+	font-style: italic;
+}
+
+span.RFC {
+	font-weight: bold;
+}
+
+span.Underline {
+	text-decoration: underline;
+}
+
+table {
+	width: 100%;
+	border: 1px solid Gray;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 0px;
+	border-collapse: collapse;
+}
+
+thead {
+	font-weight: bold;
+}
+
+td {
+	border: 1px solid Gray;
+	vertical-align: top;
+	padding: 0.5em;
+}
+
+td.header {
+	font-weight: bold;
+	font-size: 140%;	
+}
+
+td.MarcName {
+	font-weight: bold;
+	width: 30%;
+	vertical-align: top;
+	border-bottom: 1px solid black;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+td.MarcValue {
+	width: 70%;
+	vertical-align: top;
+	border-bottom: 1px solid black;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+}
+
+td.property {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+td.propertyvalue {
+	font-family: monospace;
+	text-indent: 3em;
+	font-style: italic;
+}
+
+td.propertyvalue2 {
+	font-family: monospace;
+	text-indent: 0em;
+	font-style: italic;
+}
+
+td.subheader {
+	font-weight: bold;
+	font-size: 120%;	
+}
+
+td.subsubheader {
+	font-weight: bold;
+	font-size: 100%;	
+}
+
+ul {
+	list-style: disc;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
+
+ul.AuthorList {
+	list-style: none;
+	margin-top: 0.5em;
+	padding-top: 0em;
+}
