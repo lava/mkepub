@@ -2,6 +2,7 @@ require 'common/chapter'
 
 class Book
 	attr_accessor :title, :author, :year, :lang
+	attr_reader :chapters
 
 	def initialize(book_info = {})
 		@title = book_info.fetch(:title, "")

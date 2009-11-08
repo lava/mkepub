@@ -2,16 +2,20 @@ class Epub
 	def initialize(book)
 		@book = book
 		@chapters = book.chapters.sort { |c1, c2| c1.seqno <=> c2.seqno }
-		@uid = Time.now.to_i + book.title
+		@uid = Time.now.to_i.to_s + book.title
 	end
 
 	def write_to_dir(dirname)
 		dir = dirname + "/" # dont rely on the caller for this
-		File.mkdir(dir) if !File.exist? dir
+		Dir.rmdir(dir) if File.exist? dir
+		Dir.mkdir(dir) 
+		#create various required files and directorys
+		#0. directorys
+		Dir.mkdir(dir + "content")
+		Dir.mkdir(dir + "META-INF")
 
-		#create various required files
 		#1. manifest
-		manifest = File.open(outdir + "manifest", "w")
+		manifest = File.open(dir + "manifest", "w")
 		manifest << "application/epub+zip"
 		manifest.close()
 
@@ -47,7 +51,7 @@ class Epub
 		opf.close()
 
 		#3. meta-inf/container.xml
-		container = File.open(dir + "meta-inf/container.xml", "w")
+		container = File.open(dir + "META-INF/container.xml", "w")
 		container << '<container version="1.0"><rootfiles><rootfile full-path="content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>'
 		container.close()
 
@@ -75,14 +79,14 @@ class Epub
 		toc.close()
 
 		#5. finally, the html-files for each chapter
-		@chapter.each do |chapter|
+		@chapters.each do |chapter|
 			n = chapter.seqno
 			f = File.open(dir + "content/chapter#{n}.html", "w")
 			f << chapter.text
 			f.close()
 		end
 
-		puts "Successfully wrote .epub file structure to #{dir}."
+		puts "Successfully wrote epub file structure to #{dir}."
 	end
 
 	def write_to_file(filename)

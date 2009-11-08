@@ -38,33 +38,35 @@ class GutenbergGrabber
 			name = name.encode("UTF-8")
 			text = doc.search("div#gb_texte").inner_html
 			text.force_encoding("iso-8859-1")
+			text = text.encode("UTF-8")
 			puts "Currently at chapter #{chapter}, #{name}"
 			book.add_chapter(chapter, name, text)
 
 			chapter += 1
 		end
 
+		puts "Grabbing successful. Saving raw text..."
+		save_as_yaml(book)
+
 		return book
 	end
 
-	def save_as_yaml(xid)
-		book = grab(xid)
-
-		outdir = @@BASE_OUTDIR + xid.to_s + "/"
+	def save_as_yaml(book)
+		outdir = @@BASE_OUTDIR + "/" + book.title + "/"
 		Dir.mkdir(outdir) if( !File.exist? outdir )
 
-		f = File.open(outdir + "book-" + xid.to_s + ".yaml" , "w")
-		f << book.to_yaml
-		f.close()
+		File.open(outdir + "book.yaml" , "w") do |f|
+			YAML.dump( book, f )
+		end
 
-		puts "Grabbing successful. Text output was saved in #{outdir}."
+		puts "Raw text was saved in #{outdir}."
 	end
 
 	def get_book_info(xid)
 		url = @@BASE_URL + "&id=5&xid=#{xid}&kapitel=1"
 		doc = Hpricot(open(url))
-		author = doc.at("gb_meta[@name=author]").get_attribute("content").force_encoding("iso-8859-1")
-		title = doc.at("gb_meta[@name=title]").get_attribute("content").force_encoding("iso-8859-1")
+		author = doc.at("gb_meta[@name=author]").get_attribute("content").force_encoding("iso-8859-1").encode("UTF-8")
+		title = doc.at("gb_meta[@name=title]").get_attribute("content").force_encoding("iso-8859-1").encode("UTF-8")
 		# sadly, the year isn't that easy to find out...best 
 		# approach would probably be finding the author id,
 		# going to the author page and searching for the title there
