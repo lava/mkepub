@@ -14,10 +14,10 @@ require 'common/book'
 
 class GutenbergGrabber
 	@@BASE_URL = "http://gutenberg.spiegel.de/?"
-	@@BASE_OUTDIR = "raw-text/gutenberg-DE/"
+	@@YAML_OUTDIR = "yaml/"
 
 	def initialize
-		Dir.mkdir(@@BASE_OUTDIR) if(!File.exist? @@BASE_OUTDIR)
+		Dir.mkdir(@@YAML_OUTDIR) if(!File.exist? @@YAML_OUTDIR)
 	end
 
 	def grab(xid)
@@ -38,7 +38,8 @@ class GutenbergGrabber
 			name = name.encode("UTF-8")
 			text = doc.search("div#gb_texte").inner_html
 			text.force_encoding("iso-8859-1")
-			text = text.encode("UTF-8")
+			#convert to unicode and strip unwanted html tags
+			text = text.encode("UTF-8").gsub(/<\/?a.*?>/, "").gsub(/<hr.*?\/>/, "<hr />").add_html_header(book.title).add_html_footer
 			puts "Currently at chapter #{chapter}, #{name}"
 			book.add_chapter(chapter, name, text)
 
@@ -52,14 +53,14 @@ class GutenbergGrabber
 	end
 
 	def save_as_yaml(book)
-		outdir = @@BASE_OUTDIR + "/" + book.title + "/"
+		outdir = @@YAML_OUTDIR + "/" + book.title + "/"
 		Dir.mkdir(outdir) if( !File.exist? outdir )
 
 		File.open(outdir + "book.yaml" , "w") do |f|
 			YAML.dump( book, f )
 		end
 
-		puts "Raw text was saved in #{outdir}."
+		puts "YAML dump was saved in #{outdir}."
 	end
 
 	def get_book_info(xid)
@@ -71,6 +72,23 @@ class GutenbergGrabber
 		# approach would probably be finding the author id,
 		# going to the author page and searching for the title there
 		return {:author => author, :title => title, :lang => "de"}
+	end
+end
+
+class String
+	def add_html_header(title)
+		s = <<-EOS
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head><title>#{title}</title></head>
+<body>
+		EOS
+
+		return s + self
+	end
+
+	def add_html_footer
+		return self + "\n</body>\n</html>"
 	end
 end
 

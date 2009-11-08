@@ -1,0 +1,11 @@
+A tool for ripping content from project gutenberg de and converting
+it to epub format.
+
+Note: this requires the rubyzip gem, but sadly it's broken in its current
+gem1.9 version. The fix is very easy, though:
+After you have installed the rubyzip gem, open the file zip/zip.rb in 
+the gem folder (use 'gem env' to find it), and comment out the line
+require 'ftools'
+
+I have no idea how to submit a patch at rubyforge, so you'll probably
+have to do this yourself until someone else discovers this ;)

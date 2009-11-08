@@ -5,8 +5,10 @@ require 'yaml'
 require 'grabber/gutenberg-DE'
 require 'assembly/epub'
 
+xid = 457 #hardcoding values ftw
 #grabber = GutenbergGrabber.new
-#book = grabber.grab(457) #hardcoding values ftw
-book = YAML.load_file("raw-text/gutenberg-DE/Die Brüder Karamasow/book.yaml")
+#book = grabber.grab(xid) 
+book = YAML.load_file("yaml/Schuld und Sühne/book.yaml")
 assembler = Epub.new(book)
-assembler.write_to_dir("raw-epub/karamasow/")
+#assembler.write_to_dir("epub-contents/#{xid}/")
+assembler.write_to_file("#{book.author} - #{book.title}.epub")
