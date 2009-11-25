@@ -5,7 +5,7 @@ require 'yaml'
 require 'grabber/gutenberg-DE'
 require 'assembly/epub'
 
-xid = 455 #hardcoding values ftw
+xid = 457 #hardcoding values ftw
 
 book = GutenbergGrabber.new.grab(xid) 
 #book = YAML.load_file("yaml/Schuld und Sühne/book.yaml")
