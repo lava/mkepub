@@ -1,4 +1,6 @@
 -my epub verifier complains that the mimetype file starts at the wrong
 byte offset. my ebook reader doesnt care, though
 
--in the future, grabbing from pdf's would also be nice
+-grab images and embed into resulting epub
+
+-in the future, grabbing from pdf's and even plain text would also be nice
