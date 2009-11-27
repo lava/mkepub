@@ -17,13 +17,13 @@ class GutenbergGrabber
 	# always order from more specific to less specific, if applicable
 	@@META_INFO_LOCATIONS = ["gb_meta", "div#gb_texte/html/head/meta"]
 	@@HEADING_LOCATIONS = ["div#gb_texte/html/body/", "div#gb_texte/"]
-	@@TEXT_LOCATIONS = ["div#gb_texte/html/body", "div#gb_texte"]
+	@@TEXT_LOCATIONS = ["div#gb_texte/html/body", "div#gb_texte/"]
 
 	def initialize
 		Dir.mkdir(@@YAML_OUTDIR) if(!File.exist? @@YAML_OUTDIR)
 	end
 
-	def grab(xid)
+	def grab(xid, save_yaml_output = true)
 		book_info = get_book_info(xid)
 		book = Book.new(book_info)
 		puts "Beginning grabbing xid #{xid} (title: #{book.title})"
@@ -55,7 +55,7 @@ class GutenbergGrabber
 			name = name.encode("UTF-8")
 
 			#same for text
-			text = @@TEXT_LOCATIONS.map { |text| doc.search(text).inner_html }.find {|x| !x.nil? }
+			text = @@TEXT_LOCATIONS.map { |text| doc.search(text).inner_html }.find {|x| x != ""}
 			text.force_encoding("iso-8859-1")
 			text = text.encode("UTF-8").gsub(/<\/?a.*?>/, "").gsub(/<hr.*?\/>/, "<hr />").add_html_header(book.title).add_html_footer
 			puts "Currently at chapter #{chapter}, #{name}"
@@ -64,8 +64,10 @@ class GutenbergGrabber
 			chapter += 1
 		end
 
-		puts "Grabbing successful. Saving raw text..."
-		save_as_yaml(book)
+		if save_yaml_output
+			puts "Grabbing successful. Saving raw text..."
+			save_as_yaml(book) 
+		end
 
 		return book
 	end
