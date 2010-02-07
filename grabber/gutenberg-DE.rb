@@ -17,7 +17,7 @@ class GutenbergGrabber
 	# always order from more specific to less specific, if applicable
 	@@META_INFO_LOCATIONS = ["gb_meta", "div#gb_texte/html/head/meta"]
 	@@HEADING_LOCATIONS = ["div#gb_texte/html/body/", "div#gb_texte/"]
-	@@TEXT_LOCATIONS = ["div#gb_texte/html/body", "div#gb_texte/"]
+	@@TEXT_LOCATIONS = ["div#gb_texte/html/body", "div#gb_texte"]
 
 	def initialize
 		Dir.mkdir(@@YAML_OUTDIR) if(!File.exist? @@YAML_OUTDIR)
